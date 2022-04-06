@@ -90,3 +90,25 @@ dotsContainer.addEventListener('click', function (e) {
     displayActiveDot(slide);
   }
 });
+
+////////////////////////
+// infinte scroll
+
+const container = document.querySelector('.container');
+
+window.addEventListener('scroll', () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+
+  // if the height we see and the height scrolled from top >= then whole amount of possible scrollHeight we reached bottom of the page
+  if (scrollTop + clientHeight >= scrollHeight) {
+    console.log('scrolled to bottom');
+  }
+});
+
+const getImage = function () {
+  fetch('https://via.placeholder.com/150/d32776')
+    .then(response => response.json())
+    .then(data => console.log(data));
+};
+
+getImage();
