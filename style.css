@@ -8,6 +8,7 @@ html {
   font-size: 62.5%;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -16,15 +17,132 @@ body {
 }
 
 .header {
+  position: relative;
   width: 80%;
   margin: auto;
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   font-size: 5rem;
+  margin-top: 5rem;
 }
 
 p {
   font-size: 2.5rem;
+}
+
+/* toggle button */
+.nav__button {
+  width: 8rem;
+  height: 8rem;
+  position: fixed;
+  background-color: aqua;
+  border-radius: 50%;
+  right: 3vw;
+  top: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 500;
+  cursor: pointer;
+  transition: all 0.5s;
+  padding: 1.4rem;
+  box-shadow: 0 1rem 3rem rgba(black, 0.1);
+}
+
+.nav__button.active {
+  transform: rotate(-180deg);
+}
+
+.nav__button span {
+  width: 70%;
+  height: 3px;
+  background-color: black;
+}
+
+.nav__button.active span:nth-child(1) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav__button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav__button.active span:nth-child(3) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* toggle text animation  and background*/
+
+.background {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 5.5vh;
+  right: 3.3vw;
+  background-image: radial-gradient(green, black);
+  z-index: 400;
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.background.active {
+  transform: scale(80);
+}
+
+.nav {
+  font-size: 4rem;
+  text-transform: uppercase;
+  position: fixed;
+
+  z-index: 1500;
+  top: 25vh;
+  left: -50%;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  opacity: 0;
+}
+
+.nav.active {
+  z-index: 500;
+  top: 25vh;
+  left: 45%;
+  opacity: 1;
+}
+ul {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 5rem;
+  margin-top: 1rem;
+  color: white;
+  text-decoration: none;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 240%;
+  transition: all 0.4s;
+}
+
+a:hover,
+a:active {
+  background-position: 100%;
+  color: green;
 }
