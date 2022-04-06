@@ -14,11 +14,12 @@ html {
 body {
   font-weight: 300;
   line-height: 1.9;
+  margin-bottom: 20rem;
 }
 
 .header {
   position: relative;
-  width: 80%;
+  /* width: 80%; */
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -145,4 +146,89 @@ a:hover,
 a:active {
   background-position: 100%;
   color: green;
+}
+
+/* BANNER - SLIDER*/
+
+.images__container {
+  margin-top: 5rem;
+  width: 90rem;
+  height: 55rem;
+  position: relative;
+  overflow: hidden;
+}
+.imgs-slider {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  transition: 1s;
+}
+.img2 {
+  transform: translateX(10rem);
+}
+.img3 {
+  transform: translateX(200rem);
+}
+.img4 {
+  transform: translateX(300rem);
+}
+.btn {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  font-size: 5rem;
+  background-color: aqua;
+  cursor: pointer;
+}
+.button-left {
+  position: relative;
+  top: -30rem;
+  left: -12rem;
+}
+.button-right {
+  position: relative;
+  top: -37rem;
+  left: 95rem;
+}
+
+.dots__container {
+  display: flex;
+  justify-content: center;
+  margin-top: -10rem;
+  gap: 2rem;
+}
+
+.dot {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: none;
+  background-color: rgb(134, 130, 130);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.active-dot {
+  background-color: rgb(48, 47, 47);
+}
+
+/* infinte scroll */
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  width: 70%;
+  margin: auto;
+  justify-content: center;
+  row-gap: 2.5rem;
+  margin-top: 5rem;
+}
+
+.container > img {
+  max-width: 30rem;
 }
