@@ -101,7 +101,7 @@ window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
   // if the height we see and the height scrolled from top >= then whole amount of possible scrollHeight we reached bottom of the page
-  if (scrollTop + clientHeight >= scrollHeight) {
+  if (scrollTop + clientHeight + 5 >= scrollHeight) {
     console.log('scrolled to bottom');
     showLoadingImages();
   }
@@ -126,8 +126,8 @@ const showLoadingImages = function () {
   loading.classList.add('show');
 
   // display data Images
-  setTimeout(getImages, 1000);
-  setTimeout(getImages, 1000);
-  setTimeout(getImages, 1000);
-  setTimeout(getImages, 1000);
+  getImages();
+  getImages();
+  getImages();
+  getImages();
 };

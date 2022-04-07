@@ -52,6 +52,15 @@ p {
 @media only screen and (max-width: 860px) {
 }
 
+@media only screen and (max-width: 860px) {
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
+}
+
 /* toggle button */
 .nav__button {
   width: 8rem;
@@ -252,13 +261,13 @@ a:active {
 
   .button-left {
     top: -21rem;
-    width: 6rem;
-    height: 6rem;
+    width: 5.5rem;
+    height: 5.5rem;
     font-size: 4.5rem;
   }
 
   .button-right {
-    top: -28rem;
+    top: -26.3rem;
     left: 65rem;
     font-size: 4.5rem;
     width: 5.5rem;
@@ -294,6 +303,33 @@ a:active {
   .dot {
     width: 0.8rem;
     height: 0.8rem;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .images__container {
+    width: 30rem;
+    height: 20rem;
+  }
+
+  .button-left {
+    top: -11.5rem;
+    left: -4rem;
+    font-size: 2rem;
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .button-right {
+    font-size: 2rem;
+    height: 3rem;
+    width: 3rem;
+    top: -14rem;
+    left: 31rem;
+  }
+
+  .dots__container {
+    padding-top: 5rem;
   }
 }
 
