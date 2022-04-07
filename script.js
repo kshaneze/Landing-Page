@@ -95,6 +95,7 @@ dotsContainer.addEventListener('click', function (e) {
 // infinte scroll
 
 const container = document.querySelector('.container');
+const loading = document.querySelector('.loading');
 
 window.addEventListener('scroll', () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
@@ -102,13 +103,31 @@ window.addEventListener('scroll', () => {
   // if the height we see and the height scrolled from top >= then whole amount of possible scrollHeight we reached bottom of the page
   if (scrollTop + clientHeight >= scrollHeight) {
     console.log('scrolled to bottom');
+    showLoadingImages();
   }
 });
 
-const getImage = function () {
-  fetch('https://via.placeholder.com/150/d32776')
-    .then(response => response.json())
-    .then(data => console.log(data));
+const getImages = function () {
+  fetch('https://jsonplaceholder.typicode.com/photos/78')
+    .then(res => res.json())
+    .then(dataPhoto => addImagesToDOM(dataPhoto));
 };
 
-getImage();
+const addImagesToDOM = function (dataPhoto) {
+  container.insertAdjacentHTML(
+    'beforeend',
+    `<img class="img nature" src="${dataPhoto.url}" />`
+  );
+  loading.classList.remove('show');
+};
+
+const showLoadingImages = function () {
+  // Show circle
+  loading.classList.add('show');
+
+  // display data Images
+  setTimeout(getImages, 1000);
+  setTimeout(getImages, 1000);
+  setTimeout(getImages, 1000);
+  setTimeout(getImages, 1000);
+};
