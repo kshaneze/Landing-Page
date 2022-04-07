@@ -40,6 +40,18 @@ p {
   border-bottom: #ff6200 solid 2px;
 }
 
+@media only screen and (max-width: 1160px) {
+  h1 {
+    font-size: 5rem;
+  }
+  p {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+}
+
 /* toggle button */
 .nav__button {
   width: 8rem;
@@ -124,7 +136,8 @@ p {
 .nav.active {
   z-index: 500;
   top: 25vh;
-  left: 45%;
+  left: 50%;
+  transform: translateX(-50%);
   opacity: 1;
 }
 ul {
@@ -159,8 +172,9 @@ a:active {
 /* BANNER - SLIDER*/
 
 .images__container {
-  margin-top: 5rem;
   width: 90rem;
+  margin: auto;
+  margin-top: 5rem;
   height: 55rem;
   position: relative;
   overflow: hidden;
@@ -176,7 +190,7 @@ a:active {
   border-radius: 1rem;
 }
 .img2 {
-  transform: translateX(10rem);
+  transform: translateX(100rem);
 }
 .img3 {
   transform: translateX(200rem);
@@ -229,11 +243,65 @@ a:active {
   background-color: #f0772c;
 }
 
+/* responive photo  */
+@media only screen and (max-width: 1160px) {
+  .images__container {
+    width: 60rem;
+    height: 35rem;
+  }
+
+  .button-left {
+    top: -21rem;
+    width: 6rem;
+    height: 6rem;
+    font-size: 4.5rem;
+  }
+
+  .button-right {
+    top: -28rem;
+    left: 65rem;
+    font-size: 4.5rem;
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+}
+
+@media only screen and (max-width: 860px) {
+  .images__container {
+    width: 45rem;
+    height: 25rem;
+  }
+
+  .button-left {
+    top: -15rem;
+    left: -7rem;
+    font-size: 3rem;
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .button-right {
+    font-size: 3rem;
+    height: 4rem;
+    width: 4rem;
+    top: -18rem;
+    left: 48rem;
+  }
+  .dots__container {
+    padding-top: 40px;
+  }
+
+  .dot {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}
+
 /* infinte scroll */
 
 .container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   width: 70%;
   margin: auto;
   justify-content: center;
@@ -285,5 +353,13 @@ a:active {
 
   50% {
     transform: translateY(10px);
+  }
+}
+@media only screen and (max-width: 860px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
