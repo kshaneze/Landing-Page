@@ -78,7 +78,6 @@ p {
   cursor: pointer;
   transition: all 0.5s;
   padding: 1.4rem;
-  box-shadow: 0 1rem 3rem rgba(black, 0.5);
 }
 
 .nav__button.active {
@@ -252,7 +251,7 @@ a:active {
   background-color: #f0772c;
 }
 
-/* responive photo  */
+/* responsive photo  */
 @media only screen and (max-width: 1160px) {
   .images__container {
     width: 60rem;
@@ -331,6 +330,9 @@ a:active {
   .dots__container {
     padding-top: 5rem;
   }
+}
+
+@media only screen and (max-width: 2050px) {
 }
 
 /* infinte scroll */
